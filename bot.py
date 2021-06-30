@@ -7,7 +7,7 @@ d1 = today.strftime("%d-%m-%Y")
 
 # ----------------------------------------------------------------------------
 
-API_KEY = "1869414947:AAEA5LeL9s-q_TJ0f0IhaE-1LgbDbnTt3Qk"
+API_KEY = "xxxxxx"
 bot = telebot.TeleBot(API_KEY)
 
 
@@ -95,7 +95,7 @@ def send_message(message):
     else:
         messageFor45 = messageFor45 + "No slot available for 45 and above age"
 
-    base_url = 'https://api.telegram.org/bot1869414947:AAEA5LeL9s-q_TJ0f0IhaE-1LgbDbnTt3Qk/sendMessage?chat_id=-1001178850212&text={0}'.format(
+    base_url = 'https://api.telegram.org/bot_xxxx_/sendMessage?chat_id=-_xxxx_&text={0}'.format(
         messageFor45)
     print("Response:", requests.get(base_url))
     print("Message Sent for 45+!")
@@ -113,7 +113,7 @@ def send_message(message):
     else:
         messageFor18 = messageFor18 + "No slot available for 18 and above age"
 
-    base_url = 'https://api.telegram.org/bot1869414947:AAEA5LeL9s-q_TJ0f0IhaE-1LgbDbnTt3Qk/sendMessage?chat_id=-1001178850212&text={0}'.format(
+    base_url = 'https://api.telegram.org/bot_xxxx_/sendMessage?chat_id=-_xxxx_&text={0}'.format(
         messageFor18)
     print("Response:", requests.get(base_url))
     print("Message Sent for 18+!")
