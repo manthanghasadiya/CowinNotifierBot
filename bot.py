@@ -8,15 +8,15 @@ d1 = today.strftime("%d-%m-%Y")
 
 # ----------------------------------------------------------------------------
 
-API_KEY = "xxxxxx"
-bot = telebot.TeleBot(API_KEY)
+#API_KEY = "xxxxxx"
+#bot = telebot.TeleBot(API_KEY)
 
 
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.reply_to(message,
-                 "Hey! muth marlia? To get information about vaccine centers join our discussion group and send "
-                 "your gand to big. \nDiscussion Group Link: https://t.me/joinchat/RkPTpETFr8rx_DAs")
+                 "Hey! Hows it going? To get information about vaccine centers join our discussion group and send "
+                 "your area's pincode. \nDiscussion Group Link: https://t.me/joinchat/RkPTpETFr8rx_DAs")
 
 
 def pincode_request(message):
