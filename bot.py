@@ -1,3 +1,4 @@
+# importing required tools
 import requests
 from datetime import date
 import telebot
@@ -30,13 +31,14 @@ def pincode_request(message):
 def send_message(message):
     pincode = message.text.split()[1]
     for i in pincode:
-        if i=="." or (i>='A' and i<='z') or len(pincode)!=6:
+        if i == "." or (i >= 'A' and i <= 'z') or len(pincode) != 6:
             bot.reply_to(message, "Invalid PIN! Please enter a valid PINCODE.")
             exit()
 
     url = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={0}&date={1}'.format(pincode,
                                                                                                                d1)
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'}
     x = requests.get(url, headers=headers)
     data = x.json()
 
@@ -57,7 +59,8 @@ def send_message(message):
 
     # print(listOfAllCentresFor45)
     if (len(listOfAllCentresFor45) == 0):
-        print("Pincode: " + str(pincode) + "\nVaccine for age 45 or above is not available!")
+        print("Pincode: " + str(pincode) +
+              "\nVaccine for age 45 or above is not available!")
     else:
         print("Are you 45+ .. then go and get ur vaccine!")
 
@@ -77,7 +80,8 @@ def send_message(message):
             cnt = cnt + 1
 
     if (len(listOfAllCentresFor18) == 0):
-        print("Pincode: " + str(pincode) + "\nVaccine for age 18 and above is not available!")
+        print("Pincode: " + str(pincode) +
+              "\nVaccine for age 18 and above is not available!")
     else:
         print("Are you 18+ .. then go and get ur vaccine!")
 
