@@ -2,13 +2,14 @@
 import requests
 from datetime import date
 import telebot
+import socket
 
 today = date.today()
 d1 = today.strftime("%d-%m-%Y")
 
 # ----------------------------------------------------------------------------
 
-API_KEY = "xxxxxx"
+API_KEY = "xxxxxx"# add here your api key
 bot = telebot.TeleBot(API_KEY)
 
 
@@ -17,6 +18,15 @@ def start(message):
     bot.reply_to(message,
                  "Hey! Hows it going? To get information about vaccine centers join our discussion group and send "
                  "your area's pincode. \nDiscussion Group Link: https://t.me/joinchat/RkPTpETFr8rx_DAs")
+
+@bot.message_handler(commands=["ip"])
+def show(message):
+    if message == "ip":
+        hostname = socket.gethostname()
+        ip_addr = socket.gethostbyname(hostname)
+        bot.reply_to(message,f"Your current server ip is {ip_addr}")
+    else:
+        bot.reply_to(message,"Please Provide correct command")
 
 
 def pincode_request(message):
