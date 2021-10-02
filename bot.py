@@ -49,7 +49,7 @@ def send_message(message):
 
     for d in data["sessions"]:
         if d["min_age_limit"] == 45:
-            centre_detail = "Centre {0}: ".format(cnt) + "\nCentre Adrress: " + d['name'] + ", " + d[
+            centre_detail = "Centre {0}: ".format(cnt) + "\nCentre Address: " + d['name'] + ", " + d[
                 "address"] + "\nVaccine: " + d['vaccine'] + "\nAvailable Capacity dose 1: " + str(
                 d["available_capacity_dose1"]) + "\nAvailable Capacity dose 2: " + str(
                 d["available_capacity_dose2"]) + '\n'
@@ -71,7 +71,7 @@ def send_message(message):
 
     for d in data["sessions"]:
         if d["min_age_limit"] == 18:
-            centre_detail = "Centre {0}: ".format(cnt) + "\nCentre Adrress: " + d['name'] + ", " + d[
+            centre_detail = "Centre {0}: ".format(cnt) + "\nCentre Address: " + d['name'] + ", " + d[
                 "address"] + "\nVaccine: " + d['vaccine'] + "\nAvailable Capacity dose 1: " + str(
                 d["available_capacity_dose1"]) + "\nAvailable Capacity dose 2: " + str(
                 d["available_capacity_dose2"]) + '\n'
